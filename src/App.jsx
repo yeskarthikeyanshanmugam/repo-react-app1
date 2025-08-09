@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import './App.css'
+import { AuthProvider } from './AuthContext';
+import { Navbar } from './Navbar';
 
 function App() {
-  const [count, setCount] = useState(0)
+ const [user, setUser] =  useState({name: "Karthik", role:"Developer"});
 
   return (
-    <>
-      <p className="read-the-docs">
-        {count}
-      </p>
-    </>
+    <AuthProvider>
+    <Navbar/>
+    </AuthProvider>
   )
 }
 
